@@ -5,7 +5,6 @@ function removeAllChildNodes(parent) {
 }
 
 const container = document.querySelector('#container');
-removeAllChildNodes(container);
 
 let button = document.querySelector('button')
 button.addEventListener('click',() => {
