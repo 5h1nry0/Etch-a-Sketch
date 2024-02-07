@@ -16,7 +16,7 @@ button.addEventListener('click',() => {
             row.classList.add("row");
             container.appendChild(row);
             for (let n = 0; n < number; n++){
-                let widthAndHeight = 880 / number
+                let widthAndHeight = 600 / number
                 let square = document.createElement("div");
                 square.classList.add("square");
                 square.style.width = `${widthAndHeight}px`;

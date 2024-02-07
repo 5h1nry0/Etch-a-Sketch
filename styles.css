@@ -18,8 +18,8 @@ margin: 5px;
 #container {
     display: flex;
     flex-wrap: wrap;   
-    width: 880px;    
-    height: 880px;
+    width: 600px;    
+    height: 600px;
 }
 .hover {
     background-color: #6228a3; 
