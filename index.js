@@ -1,53 +1,34 @@
-//function createGrid() {
-//const container = document.getElementById('container')
-//    for (let i=0; i<256; i++) {
-//        let square = document.createElement("div");
-//        square.classList.add("square");
-//       container.appendChild(square);
-//   }
-//}
-//createGrid() 
-
-//function createGrid() {
-//    const container = document.querySelector("#container"); 
-//    for (let i = 0; i < 256; i++) {
-//        let square = document.createElement("div");
-//        square.classList.add("square");
-//        container.appendChild(square);
-//    }
-
-//}
-
-//createGrid() 
-
-//let hoverEffect = document.getElementsByClassName("square")
-//for (let i=0; i<hoverEffect.length; i++) {
-//    hoverEffect[i].addEventListener('mouseover',() => {
-//        hoverEffect[i].classList.add("hover");
-//    })
-//}
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
 
 const container = document.querySelector('#container');
 removeAllChildNodes(container);
 
 let button = document.querySelector('button')
 button.addEventListener('click',() => {
-let number = prompt('Type here the number of squares per side')
-removeAllChildNodes(container);
-for (let i = 0; i < number*number; i++) {
-    let square = document.createElement("div");
-    square.classList.add("square");
-    container.appendChild(square);
-}
-let hoverEffect = document.getElementsByClassName("square")
-for (let i=0; i<hoverEffect.length; i++) {
-    hoverEffect[i].addEventListener('mouseover',() => {
-        hoverEffect[i].classList.add("hover");
-    })
-}
+    let number = prompt('Type here the number of squares per side')
+    removeAllChildNodes(container);
+    if (number <= 100) {
+        for (let i = 0; i < number; i++) {
+            let row = document.createElement("div");
+            row.classList.add("row");
+            container.appendChild(row);
+            for (let n = 0; n < number; n++){
+                let widthAndHeight = 880 / number
+                let square = document.createElement("div");
+                square.classList.add("square");
+                square.style.width = `${widthAndHeight}px`;
+                square.style.height = `${widthAndHeight}px`;
+                square.addEventListener('mouseover',() => {
+                    square.classList.add("hover");
+                })
+                row.appendChild(square); 
+            }
+        }
+    } else
+    { alert("Error. Max number is 100.")}     
+
 }) 
-function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
-}
