@@ -1,0 +1,17 @@
+.square {
+    min-width: 20px; 
+    height: 20px;
+    background-color: #f8f8f8; 
+    border: 1px solid #000; 
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+#container {
+    display: flex;
+    flex-wrap: wrap;   
+    width: 350px;    
+}
+.hover {
+    background-color: #6228a3; 
+}
