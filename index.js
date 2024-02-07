@@ -23,7 +23,8 @@ button.addEventListener('click',() => {
                 square.style.width = `${widthAndHeight}px`;
                 square.style.height = `${widthAndHeight}px`;
                 square.addEventListener('mouseover',() => {
-                    square.classList.add("hover");
+                    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+                    square.style.backgroundColor = "#" + randomColor;
                 })
                 row.appendChild(square); 
             }
